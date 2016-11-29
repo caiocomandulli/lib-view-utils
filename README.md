@@ -165,7 +165,7 @@ MIT License. See the file LICENSE.md with the full license text.
 
 ## Author
 
-[![Caio Comandulli](https://avatars3.githubusercontent.com/u/3738961?v=3&s=460)](https://github.com/caiocomandulli "On Github")
+[![Caio Comandulli](https://avatars3.githubusercontent.com/u/3738961?v=3&s=150)](https://github.com/caiocomandulli "On Github")
 
 Copyright (c) 2016 Caio Comandulli
 
