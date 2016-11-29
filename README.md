@@ -4,6 +4,12 @@ Classes that help with common view necessities.
 
 ## Contents
 
+- [Custom Colored Alert Dialog] (#custom-colored-alert-dialog)
+- [Fade Animation] (#fade-animation)
+- [Text Input with Error and Mask] (#text-input-with-error-and-mask)
+- [Locked Click Listener] (#locked-click-listener)
+- [Progress Button] (#progress-button)
+
 ### Custom Colored Alert Dialog
 
 `CustomAlertDialog` allows you to customize the color of the standard alert dialog.
@@ -63,7 +69,7 @@ Needing input validation and masking is pretty standard in forms.
 TextInput input = new TextInput(editText, context, Color.Green, Color.Red);
 ````
 
-We can manage our EditText's behaviour through the `TextInput` class.
+We can manage our `EditText` behaviour through the `TextInput` class.
 
 ````java
 input.invalidate(new InputError(R.string.invalid);
@@ -128,6 +134,20 @@ We implement `lockedOnClick(View)` instead, and when our code is finished we cal
 ### Progress Button
 
 `ProgressButtonTouchListener` integrates a `ProgressBar` to a `OnTouchListener`.
+
+```java
+button.setOnTouchListener(new ProgressButtonTouchListener(progressBar, duration) {
+    @Override
+    public void onCancelProgress() {
+        // if the user releases before time
+    }
+
+    @Override
+    public void onEndProgress() {
+        // if he hold for the duration
+    }
+});
+````
 
 This allows a button to be hold during an amount of time, which is tracked by the `ProgressBar`.
 If the button is released before time, we reset the animation, if the time runs out we trigger the
