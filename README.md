@@ -21,7 +21,7 @@ Colored!
 `FadeAnim` makes splash screens and resource loading very easy.
 
 ```java
-FadeAnim fadeAnim = new FadeAnim(context, R.anim.fadein, R.anim.fadeout)
+FadeAnim fadeAnim = new FadeAnim(context, R.anim.fadein, R.anim.fadeout);
 ```
 
 We instantiate a `FadeAnim`, `R.anim.fadein` and `R.anim.fadeout` are the default animations, but you can use your own too!
