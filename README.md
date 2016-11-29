@@ -8,7 +8,7 @@ Classes that help with common view necessities.
 
 `CustomAlertDialog` allows you to customize the color of the standard alert dialog.
 
-![alt tag](dialog.jpg?raw=true)
+<img src="https://github.com/caiocomandulli/lib-view-utils/blob/master/dialog.png" width="300">
 
 ### Fade Animation
 
