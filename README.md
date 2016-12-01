@@ -9,6 +9,7 @@ Classes that help with common view necessities.
 - [Text Input with Error and Mask] (#text-input-with-error-and-mask)
 - [Locked Click Listener] (#locked-click-listener)
 - [Progress Button] (#progress-button)
+- [Scrolling TextView] (#scrolling-textView)
 
 ### Custom Colored Alert Dialog
 
@@ -152,6 +153,25 @@ button.setOnTouchListener(new ProgressButtonTouchListener(progressBar, duration)
 This allows a button to be hold during an amount of time, which is tracked by the `ProgressBar`.
 If the button is released before time, we reset the animation, if the time runs out we trigger the
 listener.
+
+### Scrolling TextView
+
+`ScrollableTextView` is your standard TextView with a scroll functionality!
+
+````xml
+<com.comandulli.lib.view.ScrollableTextView
+        android:layout_width="180sp"
+        android:maxLines="5"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum ipsum at ornare pharetra. Mauris dictum odio nec libero varius suscipit. Donec lobortis ac nisl at dapibus."
+        android:textSize="12sp"/>
+````
+
+Example of a layout XML using a `ScrollableTextview`
+
+When the total height of the text is greater than your desired height,
+it scrolls automatically the text, allowing your user to read it entirely.
 
 ## Install Library
 
