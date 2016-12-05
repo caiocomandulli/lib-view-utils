@@ -202,4 +202,32 @@ public class FadeAnim {
         }
     }
 
+    /**
+     *  The animation should wait for a {@link FadeAnim#trigger()} call when this procedure is run.
+     * @param timeout duration of the procedure
+     * @return this object for inline invokes
+     */
+    public FadeAnim waitForTrigger(final long timeout) {
+        Runnable procedure = new Runnable() {
+            @Override
+            public void run() {
+                if (alreadyTriggered) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            currentProcedure++;
+                            if (procedures.size() != currentProcedure) {
+                                procedures.get(currentProcedure).run();
+                            }
+                        }
+                    }, timeout);
+                } else {
+                    waitingForTrigger = true;
+                }
+            }
+        };
+        procedures.add(procedure);
+        return this;
+    }
+
 }
