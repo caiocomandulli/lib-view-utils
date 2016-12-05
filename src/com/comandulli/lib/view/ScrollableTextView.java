@@ -91,7 +91,6 @@ public class ScrollableTextView extends TextView {
      */
     private void establish() {
         setSelected(true);
-        final Handler theHandler = new Handler();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
