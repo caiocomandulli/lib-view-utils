@@ -146,6 +146,17 @@ public class CustomAlertDialog {
     }
 
     /**
+     * Set a custom color from a resource for this alert.
+     *
+     * @param customColor the color resource
+     * @return for you to chain methods.
+     */
+    public CustomAlertDialog setCustomColorFromResource(int colorResource) {
+        this.customColor = context.getResources().getColor(colorResource);
+        return this;
+    }
+
+    /**
      * Show this alert on the screen.
      *
      * @return the alert dialog reference.
@@ -155,10 +166,10 @@ public class CustomAlertDialog {
         if (customColor != 0) {
             int dividerId = alertDialog.getContext().getResources().getIdentifier("android:id/titleDivider", null, null);
             View divider = alertDialog.findViewById(dividerId);
-            divider.setBackgroundColor(context.getResources().getColor(customColor));
+            divider.setBackgroundColor(customColor);
             int textViewId = alertDialog.getContext().getResources().getIdentifier("android:id/alertTitle", null, null);
             TextView tv = (TextView) alertDialog.findViewById(textViewId);
-            tv.setTextColor(context.getResources().getColor(customColor));
+            tv.setTextColor(customColor);
         }
         return alertDialog;
     }
